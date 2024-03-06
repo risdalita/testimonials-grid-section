@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #ddd;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  padding: 20px;
+  font-size: 13px;
+}
+
+.container {
+  width: 90%;
+  height: fit-content;
+  margin: 50px auto;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-areas:
+    'box1 box1 box2 box3'
+    'box5 box4 box4 box3';
+}
+
+.item {
+  padding: 20px;
+  /* box-sizing: border-box; */
+  border-radius: 10px;
+  color: hsl(0, 0%, 81%);
+}
+
+.box1 {
+  grid-area: box1;
+  background-color: hsl(263, 55%, 52%);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-size: 60px;
+  background-position: top right 50px;
+}
+
+.box1 .profile-heading {
+  color: hsl(0, 0%, 100%);
+}
+
+.box2 {
+  grid-area: box2;
+  background-color: hsl(217, 19%, 35%);
+}
+
+.box2 .profile-heading {
+  color: hsl(0, 0%, 100%);
+}
+
+.box3 {
+  grid-area: box3;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.box3 .profile-heading,
+.box5 .profile-heading {
+  color: hsl(219, 29%, 14%);
+}
+
+.box3 p.details,
+.box5 p.details {
+  color: hsl(217, 19%, 35%);
+}
+
+.box4 {
+  grid-area: box4;
+  background-color: hsl(219, 29%, 14%);
+}
+
+.box4 .profile-heading {
+  color: white;
+}
+
+.box5 {
+  grid-area: box5;
+  background-color: hsl(0, 0%, 100%);
+}
+
+/* edit details box */
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-detail {
+  color: hsl(0, 0%, 81%);
+  opacity: 50%;
+}
+
+.profile img {
+  float: left;
+  width: 33, 33%;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.profile-heading {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.profile-heading,
+p.details {
+  opacity: 70%;
+}
+
+/* clearfix */
+.profile::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+/* mobile */
+
+@media (max-width: 375px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
